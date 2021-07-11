@@ -20,22 +20,6 @@
         justify-content: center;
     }
 
-    .leftfoot {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        background-color: #f2f2f2;
-        float: left;
-        height: 60px;
-    }
-
-    .rightfoot {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        background-color: #f2f2f2;
-        float: right;
-        height: 60px;
-     }
-
     #gsearchbox {
         border: 1px;
         border-style: solid;
@@ -60,24 +44,85 @@
         display: inline;
     }
 
-    .upperleft {
+    .headcontain {
         display: flex;
-        box-sizing: border-box;
-        padding: 6px;
-        float: left;
+        height: 60px;
+        color: #222;
+        width: 100%;
+        font-size: 14px;
         align-items: center;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        flex-grow: 1;
+        padding-bottom: 6px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-top: 6px;
     }
-
-    .upperright {
+    
+    #upperright {
         display: flex;
         box-sizing: border-box;
         padding: 6px;
         float: right;
         align-items: center;
+        justify-content: flex-end;
+        vertical-align: middle;
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        white-space: nowrap;
+        padding-top: 0px;
+        padding-left: 30px;
+        padding-bottom: 0px;
+        padding-right: 40px;
+}
+    .footcontain {
+        display: flex;
+        height: 60px;
+        background-color: #f2f2f2;
+        width: 100%;
+        font-size: 14px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 0px;
+        box-sizing: border-box;
+        background-size: auto;
+        flex-shrink: 0;
+        background-repeat: repeat;
+        background-position: 0% 0%;
+        background-clip: border-box;
     }
+
+    .rightfoot    {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #f2f2f2;
+        justify-content: flex-end;
+        min-width: 30%;
+        order: 2;
+}
+
+    .leftfoot    {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #f2f2f2;
+        justify-content: flex-start;
+        min-width: 30%;
+        order: 1;
+}
+
     a:link {
         color: inherit;
-        text-decoration: none;
+        text-decoration-line: none;
+        text-decoration-style: solid;
+        padding-top: 15px;
+        padding-right: 15px;
+        padding-left: 15px;
+        padding-bottom: 15px;
+        white-space: nowrap;
     }
     a:hover {
        text-decoration: underline;
@@ -89,50 +134,51 @@
 
 <body>
 
-        <header>
+        
             <!--About Store Gmail Images grid thumbnail sign-in-->
             <!--not sure whether or not to do these nav areas as flexbox or grids, will try one of both-->
-        <div class="upperleft">
-            <ul>
+        <div class="headcontain">
+           
                 <li><a href="">About</a></li>
                 <li><a href="">Store</a></li>
-            </ul>
             </div>
-        <div class="upperright">
-            <ul>
+                    <div id="upperright">
                 <li><a href="">Gmail</a></li>
                 <li><a href="">Images</a></li>
-            </ul>
-            </div>
-        </header>
+                     </div>
+           
+            
+     
     <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" id="glogo">
     <div class="pair">
-        <input type="text" id="gsearchbox" placeholder="Search the Internet">
+        <input type="text" id="gsearchbox" name="gsearchbox" placeholder="Search the Internet">
     </div>
 
     <div class="results">
-        <input type="submit" value="Google Search">
-        <input type="submit" value="I'm feelin' Lucky">
+        <input type="submit" name="gsearch" value="Google Search">
+        <input type="submit" name="lucksearch" value="I'm feelin' Lucky">
     </div>
 
 
 
-    <footer>
+
         <!-- Advertising Business How Search works Privacy Terms Settings-->
-    <ul>
-            <div class="leftfoot">
-        <li><a href="">Advertising</a></li>
-        <li><a href="">Business</a></li>
-        <li><a href="">How Search works</a></li>
-                </div>
-            <div class="rightfoot">
-        <li><a href="">Privacy</a></li>
-        <li><a href="">Terms</a></li>
-        <li><a href="">Settings</a></li>
-                </div>
-    </ul>
     
-    </footer>
+         <div class="footcontain">
+                <div class="leftfoot">
+            <li><a href="">Advertising</a></li>
+            <li><a href="">Business</a></li>
+            <li><a href="">How Search works</a></li> 
+                    </div>
+                <div class="rightfoot">
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Terms</a></li>
+            <li><a href="">Settings</a></li>
+                    </div>
+              
+        </div>
+    
+   
 
 
 
